@@ -8,20 +8,22 @@
 
 /* Begin PBXBuildFile section */
 		D85092AE1EF051D0007CC6EC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85092AD1EF051D0007CC6EC /* AppDelegate.swift */; };
-		D85092B01EF051D0007CC6EC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85092AF1EF051D0007CC6EC /* ViewController.swift */; };
+		D85092B01EF051D0007CC6EC /* FaceItViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85092AF1EF051D0007CC6EC /* FaceItViewController.swift */; };
 		D85092B31EF051D0007CC6EC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D85092B11EF051D0007CC6EC /* Main.storyboard */; };
 		D85092B51EF051D0007CC6EC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D85092B41EF051D0007CC6EC /* Assets.xcassets */; };
 		D85092B81EF051D0007CC6EC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D85092B61EF051D0007CC6EC /* LaunchScreen.storyboard */; };
+		D85092C11EF0527D007CC6EC /* FaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85092C01EF0527D007CC6EC /* FaceView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		D85092AA1EF051D0007CC6EC /* FaceIt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FaceIt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D85092AD1EF051D0007CC6EC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		D85092AF1EF051D0007CC6EC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		D85092AF1EF051D0007CC6EC /* FaceItViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceItViewController.swift; sourceTree = "<group>"; };
 		D85092B21EF051D0007CC6EC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D85092B41EF051D0007CC6EC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D85092B71EF051D0007CC6EC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D85092B91EF051D0007CC6EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D85092C01EF0527D007CC6EC /* FaceView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FaceView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +56,23 @@
 		D85092AC1EF051D0007CC6EC /* FaceIt */ = {
 			isa = PBXGroup;
 			children = (
-				D85092AD1EF051D0007CC6EC /* AppDelegate.swift */,
-				D85092AF1EF051D0007CC6EC /* ViewController.swift */,
+				D85092BF1EF051F0007CC6EC /* Extras */,
+				D85092AF1EF051D0007CC6EC /* FaceItViewController.swift */,
+				D85092C01EF0527D007CC6EC /* FaceView.swift */,
 				D85092B11EF051D0007CC6EC /* Main.storyboard */,
+			);
+			path = FaceIt;
+			sourceTree = "<group>";
+		};
+		D85092BF1EF051F0007CC6EC /* Extras */ = {
+			isa = PBXGroup;
+			children = (
+				D85092AD1EF051D0007CC6EC /* AppDelegate.swift */,
 				D85092B41EF051D0007CC6EC /* Assets.xcassets */,
 				D85092B61EF051D0007CC6EC /* LaunchScreen.storyboard */,
 				D85092B91EF051D0007CC6EC /* Info.plist */,
 			);
-			path = FaceIt;
+			name = Extras;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -136,7 +147,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D85092B01EF051D0007CC6EC /* ViewController.swift in Sources */,
+				D85092B01EF051D0007CC6EC /* FaceItViewController.swift in Sources */,
+				D85092C11EF0527D007CC6EC /* FaceView.swift in Sources */,
 				D85092AE1EF051D0007CC6EC /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
