@@ -8,9 +8,16 @@
 
 import UIKit
 
+@IBDesignable
 class FaceView: UIView {
-    var scale = 0.90
-    var mouthCurature = 1.0
+    @IBInspectable
+    var scale: CGFloat = 0.90 { didSet { setNeedsDisplay() } }
+    @IBInspectable
+    var mouthCurature: Double = 1.0 { didSet { setNeedsDisplay() } }
+    @IBInspectable
+    var color: UIColor = UIColor.blue { didSet { setNeedsDisplay() } }
+    @IBInspectable
+    var lineWidth: CGFloat = 5.0 { didSet { setNeedsDisplay() } }
 
     
     private var faceRadius: CGFloat {
@@ -41,7 +48,7 @@ class FaceView: UIView {
             startAngle: 0.0,
             endAngle: CGFloat(2*Double.pi),
             clockwise: true)
-        path.lineWidth = 5.0
+        path.lineWidth = lineWidth
         return path
     }
     
@@ -78,13 +85,13 @@ class FaceView: UIView {
         let path = UIBezierPath()
         path.move(to: start)
         path.addCurve(to: end, controlPoint1: controlPoint, controlPoint2: controlPoint2)
-        path.lineWidth = 5.0
+        path.lineWidth = lineWidth
         
         return path
     }
     
     override func draw(_ rect: CGRect) {
-        UIColor.blue.set()
+        color.set()
         pathForCircleCenteredAtPoint(midPoint: faceCenter, withRadius: faceRadius).stroke()
         pathForEye(eye: .Left).stroke()
         pathForEye(eye: .Right).stroke()
