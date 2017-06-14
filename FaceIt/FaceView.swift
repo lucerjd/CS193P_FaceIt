@@ -21,7 +21,7 @@ class FaceView: UIView {
 
     
     private var faceRadius: CGFloat {
-        return min(bounds.size.width,bounds.size.height) / 2
+        return min(bounds.size.width,bounds.size.height) / 2 * scale
     }
     private var faceCenter: CGPoint {
         return CGPoint(x: bounds.midX, y: bounds.midY)
