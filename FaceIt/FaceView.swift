@@ -18,7 +18,17 @@ class FaceView: UIView {
     var color: UIColor = UIColor.blue { didSet { setNeedsDisplay() } }
     @IBInspectable
     var lineWidth: CGFloat = 5.0 { didSet { setNeedsDisplay() } }
+    @IBInspectable
+    var eyesOpen: Bool = true
 
+    func changeScale(recognizer: UIPinchGestureRecognizer) {
+        switch recognizer.state {
+        case .changed, .ended:
+            scale *= recognizer.scale
+            recognizer.scale = 1.0
+        default: break
+        }
+    }
     
     private var faceRadius: CGFloat {
         return min(bounds.size.width,bounds.size.height) / 2 * scale
@@ -66,7 +76,15 @@ class FaceView: UIView {
     private func pathForEye(eye: Eye) -> UIBezierPath {
         let eyeRadius = faceRadius / Ratios.FaceRadiusToEyeRadius
         let eyeCenter = getEyeCenter(eye: eye)
-        return pathForCircleCenteredAtPoint(midPoint: eyeCenter, withRadius: eyeRadius)
+        if (eyesOpen) {
+            return pathForCircleCenteredAtPoint(midPoint: eyeCenter, withRadius: eyeRadius)
+        } else {
+            let path = UIBezierPath()
+            path.move(to: CGPoint(x: eyeCenter.x - eyeRadius, y: eyeCenter.y))
+            path.addLine(to: CGPoint(x: eyeCenter.x + eyeRadius, y: eyeCenter.y))
+            path.lineWidth = lineWidth
+            return path
+        }
     }
     
     private func pathForMouth() -> UIBezierPath {
